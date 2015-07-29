@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reviews Received</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Submission</th>
+      <th>User</th>
+      <th>Comment</th>
+      <th>Score</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	<% if (@reviews) %>
+    	<% @reviews.each do |review| %>
+      		<tr>
+        		<td><%= review.submission_id %></td>
+        		<td><%= review.user_id %></td>
+        		<td><%= review.comment %></td>
+        		<td><%= review.score %></td>
+        		<!--<td><%= link_to 'Show', review %></td>-->
+        		<!--<td><%= link_to 'Edit', edit_review_path(review) %></td>-->
+        		<!--<td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      		</tr>
+    	<% end %>
+    	
+    	<tr>
+    		<td colspan='7' align='right'>average =
+    			<% if (@reviews.average("score").is_a? Numeric) %>
+    	 			<%=@reviews.average("score").round(2)%>
+    	 		<% else %>
+    	 			*.* 
+    	 		<%end%>
+    	 
+    	 	</td>
+    	 </tr>
+    	 
+    	 </td></tr>
+    <% else %>
+    		<tr><td>None</td></tr>
+    <% end %>
+    	
+	
+  </tbody>
+</table>
+
+<br>
+
+<!--<%= link_to 'New Review', new_review_path %>-->
+<%= link_to 'Back to list of submissions', submissions_path %>

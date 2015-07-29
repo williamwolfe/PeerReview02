@@ -1,0 +1,46 @@
+<p>
+  <strong>submission id:</strong>
+  <%= @submission.id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @submission.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @submission.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%=link_to @submission.title, @submission.link %>
+</p>
+
+<p>
+  <strong>Submitter id:</strong>
+  <%= @submission.user_id %>
+</p>
+<p>
+  <strong>current user:</strong>
+  <%= current_user.id %>
+</p>
+
+<p>
+<%if (@review) %>
+	<strong>Your current review:</strong>
+	<p>review_id = <%= @review.id %></p>
+	<p>submission_id = <%= @review.submission_id %></p>
+	<p>user_id = <%= @review.user_id %></p>
+	<p>comment = <%= @review.comment %></p>
+	<p>score = <%= @review.score %></p>
+	<p><%=link_to "Edit", edit_review_path(@review)%>
+	
+<% else %>
+	<p>
+  	<strong>Enter a comment and score:</strong>
+  	<%= link_to "Do Review", controller:"reviews", action:"new", submission_id:@submission.id %>
+	</p>
+<% end %>
+<p><%=link_to "Back to list of submisions", submissions_path%>

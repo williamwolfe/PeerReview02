@@ -1,0 +1,19 @@
+<h1>Leaderboard</h1>
+
+
+<table>
+  <tr>
+  		<th>Submission ID</th>
+     	<th>score</th>
+  </tr>
+ 
+  <% @list.each do |list_item| %>
+    <tr>
+     	<td><%= list_item[:id] %></td>
+      	<td><%= list_item[:score] %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Back to List of Submissions", submissions_path%>
+
