@@ -1,13 +1,8 @@
 <h1>Dr. Wolfe's Amazing Peer Review Website</h1>
 
-<p>You will submit your work and review others on this website.</p>
-<p>After you sign in (or sign up if you have not done so already) you will submit your work for review.</p>
-<p>After you submit your work (a link to your website), you will be able to review other students' work.</p>
-<p>For your work: develop a ruby/rails website and deploy it on heroku (or any hosting service), and then submit the URL here so that others can link to your website and review it</p>
-<p>To get started, sign in:</p>
-<p><%=link_to "Sign In", new_user_session_path%></p>
-<p>Or, if you are not a registered user yet:</p>
-<p><%=link_to "Register", new_user_registration_path%></p>
-<!--<p>If you are signed in and haven't submitted your work yet: <%=link_to "Submit your work", new_submission_path%></p>-->
-<p>After signing in, start reviewing others: <%=link_to "List of Submissions", controller: "submissions"%></p>
-<p>Sign out: <%=link_to "Sign Out", destroy_user_session_path, method:"delete"%></p>
+<h3>Submit your work and review others on this website.</h3>
+<p><b>Step 1:</b> <%=link_to "Register", new_user_registration_path%> if you are new, 
+or <%=link_to "Sign In", new_user_session_path%> if you are already registered.</p>
+<p><b>Step 2:</b> <%=link_to "Submit Your Work", new_submission_path%> (title and a link to your website).</p>
+<p><b>Step 3:</b> Go to <%=link_to "List of Submissions", controller: "submissions"%> and review others.
+<p><b>Step 4:</b> <%=link_to "Sign Out", destroy_user_session_path, :method=>:DELETE%> when you are done.</p>

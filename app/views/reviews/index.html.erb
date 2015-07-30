@@ -3,14 +3,13 @@
 <h1>Reviews Received</h1>
 
 
-<table>
-  <thead>
+<table class="table table-striped">
     <tr>
       <th>Submission</th>
-      <th>User</th>
+      <!--<th>User</th>-->
       <th>Comment</th>
       <th>Score</th>
-      <th></th>
+     
     </tr>
   </thead>
 
@@ -19,7 +18,7 @@
     	<% @reviews.each do |review| %>
       		<tr>
         		<td><%= review.submission_id %></td>
-        		<td><%= review.user_id %></td>
+        		<!--<td><%= review.user_id %></td>-->
         		<td><%= review.comment %></td>
         		<td><%= review.score %></td>
         		<!--<td><%= link_to 'Show', review %></td>-->
@@ -29,7 +28,7 @@
     	<% end %>
     	
     	<tr>
-    		<td colspan='7' align='right'>average =
+    		<td colspan='3' align='right'>average =
     			<% if (@reviews.average("score").is_a? Numeric) %>
     	 			<%=@reviews.average("score").round(2)%>
     	 		<% else %>
