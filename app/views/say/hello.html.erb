@@ -1,8 +1,16 @@
-<h1>Dr. Wolfe's Amazing Peer Review Website</h1>
+
+<div align="center">
+<h1>Web Development Peer Review Website</h1>
+
 
 <h3>Submit your work and review others on this website.</h3>
-<p><b>Step 1:</b> <%=link_to "Register", new_user_registration_path%> if you are new, 
-or <%=link_to "Sign In", new_user_session_path%> if you are already registered.</p>
-<p><b>Step 2:</b> <%=link_to "Submit Your Work", new_submission_path%> (title and a link to your website).</p>
-<p><b>Step 3:</b> Go to <%=link_to "List of Submissions", controller: "submissions"%> and review others.
-<p><b>Step 4:</b> <%=link_to "Sign Out", destroy_user_session_path, :method=>:DELETE%> when you are done.</p>
+<div class="table-responsive">
+<table class="table table-responsive table-bordered table-hover table-condensed">
+<tr><td><b><span class="glyphicon glyphicon-arrow-right"></span>Step 1</b></td><td> <%=link_to "Register", new_user_registration_path%> if you are new, 
+or <%=link_to "Sign In", new_user_session_path%> if you are already registered.</td></tr>
+<tr><td><b><span class="glyphicon glyphicon-arrow-right"></span>Step 2</b></td><td> <%=link_to "Submit Your Work", new_submission_path%> (title and a link to your website).</td></tr>
+<tr><td><b><span class="glyphicon glyphicon-arrow-right"></span>Step 3</b></td><td> Go to <%=link_to "List of Submissions", controller: "submissions"%> and review others.</td></tr>
+<tr><td><b><span class="glyphicon glyphicon-arrow-right"></span>Step 4</b></td><td> <%=link_to "Sign Out", destroy_user_session_path, :method=>:DELETE%> when you are done.</td></tr>
+</table>
+</div>
+

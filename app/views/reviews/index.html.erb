@@ -3,14 +3,16 @@
 <h1>Reviews Received</h1>
 
 
-<table class="table table-striped">
-    <tr>
-      <th>Submission</th>
-      <!--<th>User</th>-->
-      <th>Comment</th>
-      <th>Score</th>
-     
-    </tr>
+
+<div class="table-responsive">
+<table class="table table-responsive table-bordered table-hover table-condensed">
+	<thead>
+    	<tr>
+      		<th>Submission</th>
+      		<!--<th>User</th>-->
+      		<th>Comment</th>
+      		<th>Score</th>   
+    	</tr>
   </thead>
 
   <tbody>
@@ -28,7 +30,7 @@
     	<% end %>
     	
     	<tr>
-    		<td colspan='3' align='right'>average =
+    		<td  width="10%" colspan='3' align='right'>average =
     			<% if (@reviews.average("score").is_a? Numeric) %>
     	 			<%=@reviews.average("score").round(2)%>
     	 		<% else %>
@@ -46,7 +48,7 @@
 	
   </tbody>
 </table>
-
+</div>
 <br>
 
 <!--<%= link_to 'New Review', new_review_path %>-->

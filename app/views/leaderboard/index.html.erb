@@ -1,7 +1,8 @@
 <h1>Leaderboard</h1>
 
 
-<table>
+<div class="table-responsive">
+<table class="table table-responsive table-bordered table-hover table-condensed">
   <tr>
   		<th>Submission ID</th>
      	<th>score</th>
@@ -14,6 +15,7 @@
     </tr>
   <% end %>
 </table>
+</div>
 
 <%= link_to "Back to List of Submissions", submissions_path%>
 

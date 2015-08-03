@@ -1,4 +1,6 @@
-<%= form_for(@review) do |f| %>
+
+
+<%= form_for(@review, html:{role:"form"}) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -11,7 +13,8 @@
     </div>
   <% end %>
   
-  <div class="field">
+  
+  <div class="form-group">
     <%= f.label :submission_id %><br>
     <% if (@submission_id) %>
     	<%= f.number_field :submission_id, readonly:true, value:@submission_id %>
@@ -20,19 +23,19 @@
     <% end %>
   </div>
     
-  <div class="field">
+  <div class="form-group">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id, readonly:true, value:current_user.id %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, class:"form-control"%>
   </div>
   
-  <div class="field">
+  <div class="form-group">
     <%= f.label :score %><br>
-    <%= f.number_field :score %>
+    <%= f.number_field :score, class:"form-control" %>
   </div>
   
   <div class="actions">
@@ -40,3 +43,6 @@
   </div>
   
 <% end %>
+
+
+

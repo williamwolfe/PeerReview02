@@ -26,15 +26,21 @@
 
     <h2>
     	<% if flash[:notice] %>
-    		<div class="notice"><%= flash[:notice] %></div>
+    		<div class="alert alert-success">
+    			<%= flash[:notice] %>
+    		</div>
   		<% end %>
   	</h2>
   	
   	<h2>
     	<% if flash[:alert] %>
-    		<div class="alert"><%= flash[:alert] %></div>
+    		<div class="alert alert-warning">
+    			<%= flash[:alert] %>
+    		</div>
   		<% end %>
   	</h2>
+ 
+    
     
     <p><%=yield%></p>
 

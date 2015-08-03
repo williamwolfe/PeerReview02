@@ -1,46 +1,38 @@
-<p>
-  <strong>submission id:</strong>
-  <%= @submission.id %>
-</p>
+<div align="center">
 
-<p>
-  <strong>Title:</strong>
-  <%= @submission.title %>
-</p>
+
+<div class="table-responsive">
+<table class="table table-responsive table-bordered table-hover table-condensed">
+<tr><td align="center" colspan="2"><h3>Submission ID: <%=@submission.id%></h3></td></tr>
+<tr>
+  <td align="right"><strong>Title/Link:</strong></td>
+   <td><%=link_to @submission.title, @submission.link %></td>
+</tr>
  
-<p>
-  <strong>Description:</strong>
-  <%= @submission.description %>
-</p>
+<tr>
+  <td align="right"><strong>Description:</strong></td>
+  <td><%= @submission.description %></td>
+</tr>
 
-<p>
-  <strong>Link:</strong>
-  <%=link_to @submission.title, @submission.link %>
-</p>
+<tr>
+  <td align="right"><strong>Submitter id:</strong></td>
+  <td><%= @submission.user_id %></td>
+</tr>
 
-<p>
-  <strong>Submitter id:</strong>
-  <%= @submission.user_id %>
-</p>
-<p>
-  <strong>current user:</strong>
-  <%= current_user.id %>
-</p>
-
-<p>
 <%if (@review) %>
-	<strong>Your current review:</strong>
-	<p>review_id = <%= @review.id %></p>
-	<p>submission_id = <%= @review.submission_id %></p>
-	<!--<p>user_id = <%= @review.user_id %></p>-->
-	<p>comment = <%= @review.comment %></p>
-	<p>score = <%= @review.score %></p>
-	<p><%=link_to "Edit", edit_review_path(@review)%>
+	<tr><td align="center" colspan="2"><h3>Your Review</h3></td></tr>
+	<tr><td align="right"><strong>review_id:</strong></td><td><%= @review.id %></td></tr>
+	<tr><td align="right"><strong>submission_id:</strong></td><td><%= @review.submission_id %></td></tr>
+	<tr><td align="right"><strong>comment:</strong></td><td><%= @review.comment %></td></tr>
+	<tr><td align="right"><strong>score:</strong></td><td><%= @review.score %></td></tr>
+	<tr><td align="right"><strong>Edit:</strong></td><td><%=link_to "Edit This Review", edit_review_path(@review)%></td></tr>
 	
 <% else %>
-	<p>
-  	<strong>Enter a comment and score:</strong>
-  	<%= link_to "Do Review", controller:"reviews", action:"new", submission_id:@submission.id %>
-	</p>
+  	<tr>
+  	<td><strong>Enter a comment and score:</strong></td>
+  	<td><%= link_to "Do Review", controller:"reviews", action:"new", submission_id:@submission.id %></td>
+	</tr>
 <% end %>
-<p><%=link_to "Back to list of submisions", submissions_path%>
+<tr><td align="right"><strong>Back:</strong></td><td><%=link_to "Back to list of submisions", submissions_path%></td></tr>
+</table>
+</div>
