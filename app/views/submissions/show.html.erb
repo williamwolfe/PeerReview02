@@ -1,7 +1,7 @@
-<div align="center">
 
 
-<div class="table-responsive">
+
+<div class="container">
 <table class="table table-responsive table-bordered table-hover table-condensed">
 <tr><td align="center" colspan="2"><h3>Submission ID: <%=@submission.id%></h3></td></tr>
 <tr>
@@ -29,7 +29,7 @@
 	
 <% else %>
   	<tr>
-  	<td><strong>Enter a comment and score:</strong></td>
+  	<td align="right"><strong>Comment and score:</strong></td>
   	<td><%= link_to "Do Review", controller:"reviews", action:"new", submission_id:@submission.id %></td>
 	</tr>
 <% end %>
